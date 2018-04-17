@@ -1,10 +1,8 @@
-# Global Containers
+# Docker Addon Services
 
 Provide Docker containers for common services.
 
 ## Getting Started
-
-Clone this repository in your machine then run the services you want using **Docker Compose**.
 
 ```
 docker-compose up -d postgres redis
@@ -12,7 +10,17 @@ docker-compose up -d postgres redis
 
 ## Configuration
 
-Environment variables can be set inside service's folder, inside `.env` files.
+### Environment Variables
+
+Copy all .env.example files to .env inside service folders and set all variables you need.
+
+### Networks
+
+To access services from other containers, you must add a global network called `addons`.
+
+```
+docker network create addons
+```
 
 ## Import existing Postgres databases
 
